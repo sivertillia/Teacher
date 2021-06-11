@@ -1,0 +1,36 @@
+{
+    "message_id": 49,
+    "from": {
+        "id": 855796186,
+        "is_bot": false,
+        "first_name": "Gun IT y",
+        "username": "sivert_official",
+        "language_code": "ru"
+    },
+    "chat": {
+        "id": 855796186,
+        "first_name": "Gun IT y",
+        "username": "sivert_official",
+        "type": "private"
+    },
+    "date": 1622832515,
+    "reply_to_message": {
+        "message_id": 47,
+        "from": {
+            "id": 855796186,
+            "is_bot": false,
+            "first_name": "Gun IT y",
+            "username": "sivert_official",
+            "language_code": "ru"
+        },
+        "chat": {
+            "id": 855796186,
+            "first_name": "Gun IT y",
+            "username": "sivert_official",
+            "type": "private"
+        },
+        "date": 1622832486,
+        "text": "+"
+    },
+    "text": "+"
+}
