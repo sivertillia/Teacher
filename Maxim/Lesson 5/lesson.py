@@ -19,13 +19,17 @@ for i in features_all_data:
     mags.append(mag)
     title_text.append(h_text)
 
+t = title_text + mags
 
 
 
 # data = [Scattergeo(lon=lons, lat=lats, )]
 data = [{
     'type':'scattergeo',
-    'text': title_text,
+    
+    # 'locations': ['Ukraine'],
+    # 'locationmode': 'country names',
+    'text': t,
     'lon': lons,
     'lat': lats,
     'marker': {
@@ -36,5 +40,5 @@ data = [{
     }
 }]
 my_layout = Layout(title="Earth")
-fig = {'data': data, 'layout':my_layout}
+fig = {'data': data, 'layout':my_layout, }
 offline.plot(fig, filename='test.html')
