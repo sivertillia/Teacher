@@ -3,8 +3,17 @@
 {% block title %}Title Blog{% endblock %}
 
 {% block content %}
-    {% for name in names %}
-        <h1>Привет, {{ name }}!</h1>
+    {% for post in posts %}
+    <div class="card">
+        <div class="card-header">
+          {{ post.date_pub }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.body|truncatewords:15 }}</p>
+          <a href="#" class="btn btn-success">Читать</a>
+        </div>
+      </div>
     {% endfor %}
 {% endblock %}
 
