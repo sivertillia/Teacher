@@ -17,6 +17,6 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', hello, name='blog_url')
-    
+    path('', hello, name='blog_url'),
+    path('post/<str:slug>', get_post_detail, name='post_detail_url')
 ]

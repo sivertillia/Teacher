@@ -1,0 +1,11 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="main" style="background-color: #ffffff;margin-top: 9%;margin-bottom: 9%;width: 900px;height: 580px;">
+    <div class="main" style="background: #5fcbff"><h1 style="text-align: center;">{{ post.date_pub }}</h1></div>
+    <div style="height: 470px;background: #e4cbcb" class="main">{{ post.body }}</div>
+</div>
+{% endblock %}
+    

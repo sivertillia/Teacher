@@ -1,0 +1,16 @@
+body {
+	background: #fa7481
+}
+
+.main {
+    border-radius: 20px;
+    margin-left: auto;
+	margin-right: auto;
+	padding: 7px;
+}
+
+
+.enter {
+	padding-top: 10px;
+
+}
