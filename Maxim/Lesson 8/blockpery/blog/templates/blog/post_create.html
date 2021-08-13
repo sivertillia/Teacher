@@ -1,0 +1,15 @@
+{% extends 'blog/base.blog.html'%}
+{%block title%}Create Post{% endblock %}
+{% block content%}
+<div class="main" style="width: 1100px;height: auto;">
+    <h1 class="fontchoice">Создайте свой пост</h1>
+    <form method="POST">
+        <h2 class="fontchoice" style="padding: 10px">Введите заголовок поста</h2>
+        <input type="text" class="formcontrol">
+        <h2 class="fontchoice" style="padding: 10px">Введите собственно пост</h2>
+        <input type="text" class="formcontrol" style="height: 400px;">
+        <button class="button" type="submit">Создать пост</button>
+    </form>
+</div>
+{% endblock %}
+

@@ -1,10 +1,7 @@
-{% extends 'blog/base_blog.html' %}
-
-{% block title %}Title Blog{% endblock %}
-
-{% block content %}
-    {% for post in posts %}
-        {% include 'blog/includes/block_post.html' %}
-    {% endfor %}
-{% endblock %}
-
+{% extends 'blog/base.blog.html'%}
+{%block title%}Test{% endblock %}
+{%block content%}
+{%for post in posts%}
+  {%include 'blog/includes/block_post.html'%}
+{%endfor%}
+{%endblock%}
