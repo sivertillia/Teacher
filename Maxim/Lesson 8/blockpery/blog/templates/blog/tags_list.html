@@ -1,7 +1,7 @@
 {% extends 'blog/base.blog.html' %}
-{%block title%}tags{%endblock%}
-{%block content%}
-    {%for tag in tags%}
-        <h1><a href="{{tag.get_absoluter_tag}}">{{tag.title|title}}</h1>
-    {%endfor%}
-{%endblock%}
+{% block title %}tags{% endblock %}
+{% block content %}
+    {% for tag in tags %}
+        <h1><a href="{{ tag.get_absoluter_url }}">{{ tag.title|title }}</a></h1>
+    {% endfor %}
+{% endblock %}

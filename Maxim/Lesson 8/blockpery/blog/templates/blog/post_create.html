@@ -1,15 +1,34 @@
-{% extends 'blog/base.blog.html'%}
-{%block title%}Create Post{% endblock %}
-{% block content%}
-<div class="main" style="width: 1100px;height: auto;">
-    <h1 class="fontchoice">Создайте свой пост</h1>
-    <form method="POST">
-        <h2 class="fontchoice" style="padding: 10px">Введите заголовок поста</h2>
-        <input type="text" class="formcontrol">
-        <h2 class="fontchoice" style="padding: 10px">Введите собственно пост</h2>
-        <input type="text" class="formcontrol" style="height: 400px;">
-        <button class="button" type="submit">Создать пост</button>
-    </form>
-</div>
+{% extends 'blog/base.blog.html' %}
+{% block title %}Create Post{% endblock %}
+{% block content %}
+    <div class="main" style="width: 1100px;height: auto;">
+        <h1 class="fontchoice">Создайте свой пост</h1>
+        <form action="{% url 'post_create_url' %}" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {% if field.errors %}
+                        <div class="alert alert-danger">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+                    {{ field.label }}
+                    {{ field }}
+                </div>
+            {% endfor %}
+            {#            <h2 class="fontchoice">Введите тег</h2>#}
+            {#            {{ form.title }}#}
+            {#            <h2 class="fontchoice">Введите слизень?!</h2>#}
+            {#            {{ form.slug }}#}
+            {#            {{ form.body }}#}
+            {#            {{ form.tags }}#}
+            <button class="button" type="submit">Create Post</button>
+            {#        <h2 class="fontchoice" style="padding: 10px">Введите заголовок поста</h2>#}
+            {#        <input type="text" class="formcontrol">#}
+            {#        <h2 class="fontchoice" style="padding: 10px">Введите собственно пост</h2>#}
+            {#        <input type="text" class="formcontrol" style="height: 400px;">#}
+            {#        <button class="button" type="submit">Создать пост</button>#}
+        </form>
+    </div>
 {% endblock %}
 
