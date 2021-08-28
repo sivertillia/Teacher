@@ -53,3 +53,13 @@ class PostCreate(View):
             new_tag = bound_form.save()
             return redirect(new_tag.get_absoluter_url())
         return render(request, 'blog/tag_create.html', context={'form': bound_form})
+
+class TagDelete(View):
+    def get(self, request, slug):
+        tag = Tag.objects.get(slug__iexact=slug)
+        return render(request, 'blog/tag_delete.html', context={'tag': tag})
+
+    def post(self, request, slug):
+        tag = Tag.objects.get(slug__iexact=slug)
+        tag.delete()
+        return redirect('/blog/tags')
