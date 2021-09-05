@@ -1,0 +1,12 @@
+{% extends 'blog/base_blog.html' %}
+{% block title %}Post{% endblock %}
+{% block content %}
+    <form action="{% url 'post_delete_url' slug=post.slug %}" method="POST">
+        {% csrf_token %}
+        <div class="main" style="width: 600px">
+            <h1 class="fontchoice" style="padding: 15px">Вы уверены, что хотите удалить пост <b>{{ post.title|title }}</b>?</h1>
+                <a class="btn btn-outline-danger" style="width: 85px; margin-left: 35%" href="{% url 'blog_url' %}">Нет</a>
+                <button type="submit" class="btn btn-outline-danger" style="margin-right: 35%">Удалить</button>
+        </div>
+    </form>
+{% endblock %}

@@ -2,8 +2,8 @@
 {% block title %}Create Post{% endblock %}
 {% block content %}
     <div class="main" style="width: 1100px;height: auto;">
-        <h1 class="fontchoice">Создайте свой пост</h1>
-        <form action="{% url 'post_create_url' %}" method="POST">
+        <h1 class="fontchoice">Обновить пост {{ post.title | title }} </h1>
+        <form action="{{ post.get_update_url }}" method="POST">
             {% csrf_token %}
             {% for field in form %}
                 <div class="form-group">
@@ -12,11 +12,12 @@
                             {{ field.errors }}
                         </div>
                     {% endif %}
+
                     {{ field.label }}
                     {{ field }}
                 </div>
             {% endfor %}
-            <button class="button" type="submit">Create Post</button>
+            <button class="button" type="submit">Update Post</button>
         </form>
     </div>
 {% endblock %}

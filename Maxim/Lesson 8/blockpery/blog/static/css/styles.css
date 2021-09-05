@@ -126,6 +126,7 @@ aside {
     width: 250px;
 }
 
+
 .button {
     background-color: #dc3545;
     border-radius: 10px;
@@ -136,4 +137,29 @@ aside {
     font-size: 16px;
     display: block;
     margin: 10px auto 10px auto;
+}
+
+.tags_list {
+    max-width: 250px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+
+.admin-panel {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: 50px;
+    bottom: 50px;
+    width: 150px;
+    height: 200px;
+    background: white;
+    border-radius: 25px;
+}
+.admin-panel > a {
+    width: 100px;
 }
