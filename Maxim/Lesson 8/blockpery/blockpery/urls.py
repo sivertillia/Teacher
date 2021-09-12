@@ -21,5 +21,6 @@ from blockpery.views import redirectBlog
 urlpatterns = [
     path('', redirectBlog),
     path('admin/', admin.site.urls),
+    # path('logout/', name='logout'),
     path('blog/', include('blog.urls'))
 ]

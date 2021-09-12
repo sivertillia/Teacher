@@ -17,7 +17,8 @@ from .views import *
 from django.urls import path
 
 urlpatterns = [
-    path('', hello, name='blog_url'),
+    path('', blog, name='blog_url'),
+    path('logout/', log_out, name='logout_url'),
     path('post/<str:slug>/delete/', PostDelete.as_view(), name='post_delete_url'),
     path('post/<str:slug>/update/', PostUpdate.as_view(), name='post_update_url'),
     path('post/create', PostCreate.as_view(), name='post_create_url'),

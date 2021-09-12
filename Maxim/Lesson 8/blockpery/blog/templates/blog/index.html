@@ -5,3 +5,6 @@
       {%include 'blog/includes/block_post.html'%}
     {%endfor%}
 {%endblock%}
+{% block admin-panel %}
+    <a href="{% url 'post_create_url' %}" class="btn btn-success">Create</a>
+{% endblock %}

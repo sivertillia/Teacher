@@ -3,10 +3,12 @@ from django.http import HttpResponse
 from .models import Post, Tag
 from django.views.generic import View
 from .forms import PostForm, TagForm
+from django.contrib.auth import logout
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
-def hello(request):
+def blog(request):
     post = Post.objects.all()
     return render(request, "blog/index.html", context={'posts': post})
 
@@ -67,7 +69,7 @@ class TagDelete(View):
         return redirect('/blog/tags')
 
 
-class PostDelete(View):
+class PostDelete(LoginRequiredMixin, View):
     def get(self, request, slug):
         post = get_object_or_404(Post, slug__iexact=slug)
         return render(request, 'blog/post_delete.html', context={'post': post})
@@ -77,7 +79,10 @@ class PostDelete(View):
         post.delete()
         return redirect('/blog')
 
-class PostUpdate(View):
+    login_url = '/'
+    redirect_field_name = 'blog_url'
+
+class PostUpdate(LoginRequiredMixin, View):
     def get(self, request, slug):
         post = get_object_or_404(Post, slug__iexact=slug)
         form = PostForm(instance=post)
@@ -90,3 +95,10 @@ class PostUpdate(View):
             new_post = bound_form.save()
             return redirect(new_post.get_absoluter_url())
         return render(request, 'blog/post_update.html', context={'form': bound_form, 'post': post})
+
+    login_url = '/'
+    redirect_field_name = 'blog_url'
+
+def log_out(request):
+    logout(request)
+    return redirect('blog_url')

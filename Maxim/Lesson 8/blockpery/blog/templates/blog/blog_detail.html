@@ -19,7 +19,6 @@
 {% endblock %}
 
 {% block admin-panel %}
-    <a class="btn btn-success">Create</a>
-    <a class="btn btn-primary">Edit</a>
-    <a class="btn btn-danger">Delete</a>
+    <a href="{% url 'post_update_url' slug=post.slug %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'post_delete_url' slug=post.slug %}" class="btn btn-danger">Delete</a>
 {% endblock %}
